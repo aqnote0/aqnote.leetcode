@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.makefile": "makefile",
+        "Makeconfig": "makefile",
+        "*.mak": "makefile",
+        "*.mk": "makefile",
+        "CMakeLists.txt": "cmake",
+        "*.cmake": "cmake",
+        "*.geojson": "json",
+        "*.clang-format": "yaml",
+        "vector": "cpp"
+    }
+}

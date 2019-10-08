@@ -1,0 +1,47 @@
+=================================================================
+==29==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7ffdcb7ce564 at pc 0x000000401a89 bp 0x7ffdcb7ce440 sp 0x7ffdcb7ce438
+WRITE of size 4 at 0x7ffdcb7ce564 thread T0
+    #2 0x7feeb6da42e0 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x202e0)
+
+Address 0x7ffdcb7ce564 is located in stack of thread T0 at offset 164 in frame
+
+  This frame has 5 object(s):
+    [32, 36) 'SEPARATOR'
+    [96, 100) 'size_1'
+    [160, 164) 'ret_size' <== Memory access at offset 164 overflows this variable
+    [224, 232) 'nbytes'
+    [288, 296) 'line'
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism or swapcontext
+      (longjmp and C++ exceptions *are* supported)
+Shadow bytes around the buggy address:
+  0x1000396f1c50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1c60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1c70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1c80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1c90: 00 00 00 00 00 00 00 00 f1 f1 f1 f1 04 f2 f2 f2
+=>0x1000396f1ca0: f2 f2 f2 f2 04 f2 f2 f2 f2 f2 f2 f2[04]f2 f2 f2
+  0x1000396f1cb0: f2 f2 f2 f2 00 f2 f2 f2 f2 f2 f2 f2 00 f2 f2 f2
+  0x1000396f1cc0: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1cd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1ce0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1000396f1cf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==29==ABORTING
