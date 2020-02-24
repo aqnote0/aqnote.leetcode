@@ -71,6 +71,10 @@ int main(int argc, char** argv) {
     while (result != NULL) {
         printf("%d", result->val);
 
-        if (result != NULL) result = result->next;
+        if (result != NULL) {
+            struct ListNOde* tmp = result->next;
+            free(result);
+            result = tmp;
+        }
     }
 }
