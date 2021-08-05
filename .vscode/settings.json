@@ -1,13 +1,27 @@
 {
     "files.associations": {
+        "*.S": "platformio-debug.asm",
+        "*.s": "platformio-debug.asm",
+        "*.asm": "platformio-debug.asm",
+        "*.gas": "platformio-debug.asm",
+        "*.od": "platformio-debug.disassembly",
+        "*.objdump": "platformio-debug.disassembly",
+        "*.disasm": "platformio-debug.disassembly",
         "*.makefile": "makefile",
-        "Makeconfig": "makefile",
         "*.mak": "makefile",
         "*.mk": "makefile",
         "CMakeLists.txt": "cmake",
         "*.cmake": "cmake",
+        "*.cmake.in": "cmake",
         "*.geojson": "json",
         "*.clang-format": "yaml",
-        "vector": "cpp"
+        "*.md": "markdown",
+        "README": "markdown",
+        "*.em": "c",
+        "*.sc": "shellscript",
+        "Makeconfig": "makefile",
+        "vector": "cpp",
+        "string.h": "c",
+        "locale_t.h": "c"
     }
 }
